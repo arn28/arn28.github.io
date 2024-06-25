@@ -4,4 +4,5 @@ export const CONTACT_INFO = {
   GITHUB: 'https://github.com/arn28',
   GITHUB_USER: 'arn28',
   LINKEDIN: 'https://www.linkedin.com/in/arnold-balabarca/',
+  WEB: 'https://arn28.github.io/',
 }
