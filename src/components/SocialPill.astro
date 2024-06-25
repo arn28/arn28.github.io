@@ -1,0 +1,9 @@
+<a
+  {...Astro.props}
+  target='_blank'
+  rel='noopener noreferrer'
+  role='link'
+  class={`cursor-pointer inline-flex items-center justify-center gap-2 px-4 py-1 text-white transition bg-green-600 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white text-md hover:bg-green-700 dark:hover:bg-green-900 hover:border-green-900 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-green-800 ${Astro.props.customClass || ''}`}
+>
+  <slot />
+</a>

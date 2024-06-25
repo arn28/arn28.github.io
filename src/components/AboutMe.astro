@@ -1,0 +1,51 @@
+---
+import { CONTACT_INFO } from '@/utils/constants/contactInfo'
+---
+
+<article
+  class='flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row'
+>
+  <div
+    class='[&>p]:mb-4 [&>p>strong]:text-green-600 dark:[&>p>strong]:text-green-600 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1'
+  >
+    <p>
+      Me llamo <strong> {CONTACT_INFO.FULLNAME} </strong>
+      y soy de
+      <strong> Perú</strong>. Soy
+      <strong> Desarrollador Front-End </strong>
+      con experiencia en el
+      <strong> desarrollo de aplicaciones web</strong>. Actualmente, estoy
+      involucrado en proyectos que me permiten aprender y aplicar
+      <strong> nuevas tecnologías web</strong>.
+    </p>
+
+    <p>
+      He tenido la oportunidad de
+      <strong> colaborar con un equipo internacional</strong>, trabajando
+      completamente en inglés, lo que me ha permitido afinar mis
+      <strong> habilidades tecnológicas </strong>
+      y profundizar en el conocimiento de
+      <strong> metodologías ágiles de desarrollo</strong>. Me apasiona la
+      <strong> parte visual del desarrollo web </strong>
+      y me esfuerzo por brindar una
+      <strong> experiencia de usuario excepcional</strong>.
+    </p>
+
+    <p>
+      En mi tiempo libre, disfruto de actividades como
+      <strong>
+        caminar, tomar fotografías, tocar música y cuidar de mis plantas</strong
+      >, lo que me ayuda a mantener un
+      <strong> equilibrio entre lo profesional y lo personal</strong>.
+    </p>
+  </div>
+
+  <img
+    width='200'
+    height='200'
+    src='/about_me.webp'
+    alt={CONTACT_INFO.FULLNAME}
+    class='order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-green-500/5 ring-1 ring-black/70 dark:ring-white/20'
+    style='object-position: 50% 50%'
+  />
+</article>

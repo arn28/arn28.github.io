@@ -1,0 +1,93 @@
+---
+import Badge from '@/components/Badge.astro'
+import LinkedInIcon from '@/components/icons/LinkedIn.astro'
+import GitHubIcon from '@/components/icons/GitHub.astro'
+import MailIcon from '@/components/icons/Mail.astro'
+import SocialPill from '@/components/SocialPill.astro'
+import Alert from '@/components/Alert.astro'
+import { CONTACT_INFO } from '@/utils/constants/contactInfo'
+import CopyIcon from './icons/CopyIcon.astro'
+---
+
+<div class='max-w-xl'>
+  <div class='flex gap-4 mb-4'>
+    <img
+      class='rounded-full shadow-lg size-16'
+      src='/profile_picture.webp'
+      alt={CONTACT_INFO.FULLNAME}
+    />
+    <a
+      href={CONTACT_INFO.LINKEDIN}
+      target='_blank'
+      rel='noopener'
+      class='flex items-center transition md:justify-center md:hover:scale-105'
+    >
+      <Badge>Listo para nuevos desafíos</Badge>
+    </a>
+  </div>
+  <h1
+    class='text-4xl font-bold tracking-tight  sm:text-5xl '
+  >
+    Hey, soy {CONTACT_INFO.FULLNAME}
+  </h1>
+  <p
+    class='mt-6 text-xl dark:[&>strong]:text-green-600 [&>strong]:text-green-600 [&>strong]:font-semibold dark:text-gray-300'
+  >
+    Desarrollador Web.
+    <strong> Programador Front-End</strong>, bilingüe con dominio del
+    <strong> Inglés Avanzado</strong>. Con estudios en Ingeniería de Sistemas,
+    Perú. Orientado al desarrollo de soluciones
+    <strong> Robustas, Escalables y Responsivas.</strong>
+  </p>
+  <nav class='flex flex-wrap gap-4 mt-8'>
+    <SocialPill id='copy-email-button'>
+      <MailIcon id='email-icon' class='size-4' />
+      <CopyIcon
+        id='check-icon'
+        class='hidden size-4 text-green-400 animate-ping'
+      />
+      <span>
+        {CONTACT_INFO.EMAIL}
+      </span>
+    </SocialPill>
+    <SocialPill href={CONTACT_INFO.LINKEDIN}>
+      <LinkedInIcon class='size-4' />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href={CONTACT_INFO.GITHUB}>
+      <GitHubIcon class='size-4' />
+      GitHub
+    </SocialPill>
+  </nav>
+  <Alert id='alert-info'>
+    <p class='font-semibold'>Correo copiado. Espero tu mensaje!</p>
+  </Alert>
+</div>
+
+<script>
+  import { copyToClipboard } from '@/utils/helpers'
+  import { CONTACT_INFO } from '@/utils/constants/contactInfo'
+
+  const copyButton = document.getElementById('copy-email-button')
+  const mailIcon = document.getElementById('email-icon')
+  const checkIcon = document.getElementById('check-icon')
+  const alertInfo = document.getElementById('alert-info')
+
+  if (copyButton) {
+    copyButton.addEventListener('click', function () {
+      copyToClipboard(CONTACT_INFO.EMAIL)
+      mailIcon?.classList.add('hidden')
+      checkIcon?.classList.remove('hidden')
+      alertInfo?.classList.add('is-open')
+      copyButton.classList.add('animate-bounce')
+      setTimeout(() => {
+        mailIcon?.classList.remove('hidden')
+        checkIcon?.classList.add('hidden')
+        copyButton.classList.remove('animate-bounce')
+      }, 1600)
+      setTimeout(() => {
+        alertInfo?.classList.remove('is-open')
+      }, 3000)
+    })
+  }
+</script>

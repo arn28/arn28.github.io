@@ -1,0 +1,47 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+const EXPERIENCIE = [
+  {
+    date: 'Septiembre 2023 – Marzo 2024 (6 meses)',
+    title: 'Frontend Web Developer',
+    company: 'Samishop S.A.C.',
+    description:
+      'Contribuí y diseñé, desarrollé y probé aplicaciones web con ReactJS y colaboré en el desarrollo de sitios e-commerce y landing pages. Aseguré la calidad y consistencia del código escribiendo documentación y utilizando herramientas como ESLint y Prettier. Participé en el despliegue de aplicaciones en la nube con Google Cloud Platform y AWS Bucket S3.',
+    stack:
+      'React JS, Qwik, Typescript, Figma, NodeJS, Express, MogoDB, AWS, GCP, Storybook.',
+  },
+  {
+    date: 'Enero 2023 – Septiembre 2023 (9 meses)',
+    title: 'Junior Software Developer',
+    company: 'FRACTAL',
+    description:
+      'Colaboré estrechamente en el desarrollo de aplicaciones web utilizando React (Next.js) y Java (Spring Boot). Participé activamente en reuniones de análisis y diseño, contribuyendo significativamente al ciclo de vida del desarrollo de software con un enfoque en tecnologías modernas y prácticas ágiles.',
+    stack: 'NextJS, typescript, Bootstrap, MySQL, Java7, Spring Boot, MongoDB.',
+  },
+  {
+    date: 'Mayo 2023 - Agosto 2023 (4 meses)',
+    title: 'Software Developer',
+    company: 'BLAZE Solutions, Inc.',
+    description:
+      'Diseñé y desarrollé aplicaciones web con React y TypeScript, desplegadas automáticamente mediante GitHub Actions. Colaboré estrechamente con un equipo multidisciplinario e internacional, utilizando el inglés como lengua principal, lo que enriqueció mi experiencia profesional y fortaleció mis habilidades de comunicación global.',
+    stack: 'React JS, TypeScript, Ant Design, NodeJS, Express JS, MySQL, AWS.',
+  },
+  {
+    date: 'Diciembre 2021 - Abril 2022 (5 meses)',
+    title: 'Asistente de Sistemas e Informática',
+    company: 'Bizonte Black S.R.L',
+    description:
+      'Brindé soporte técnico continuo y mantenimiento, además de ejecutar actualizaciones y configuraciones de software y hardware de oficina.',
+  },
+]
+---
+
+<ol class='relative mt-16'>
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class=''>
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
