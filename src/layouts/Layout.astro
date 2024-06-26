@@ -33,13 +33,16 @@ const imagePreview = '/web-preview.webp'
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
     <meta property='og:image' content={imagePreview} />
+    <meta property='og:image:type' content='image/webp' />
+
+    <meta property='og:site_name' content={title} />
 
     <!-- Open Graph / Facebook -->
-    <meta name='og:type' content='website' />
+    <!-- <meta name='og:type' content='webssite' />
     <meta name='og:url' content={CONTACT_INFO.WEB} />
     <meta name='og:title' content={title} />
     <meta name='og:description' content={description} />
-    <meta name='og:image' content={imagePreview} />
+    <meta name='og:image' content={imagePreview} /> -->
 
     <!-- Twitter -->
     <meta property='twitter:card' content='summary_large_image' />
@@ -47,6 +50,7 @@ const imagePreview = '/web-preview.webp'
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />
     <meta property='twitter:image' content={imagePreview} />
+    <meta property='og:image' content={imagePreview} />
 
     <!-- Twitter -->
     <meta name='twitter:card' content='summary_large_image' />
