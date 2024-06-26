@@ -67,7 +67,7 @@ export const PROJECTS = [
     title: 'Colón Dreams',
     description:
       'Web de reserva y publicación de alojamientos para vacaciones o escapadas de fin de semana al departamento de Colon, Entre Ríos, Argentina.',
-    link: 'https://c8-71-m-jquery.vercel.app/',
+    link: 'https://colondreams.vercel.app//',
     // github: 'https://github.com/pheralb/svgl',
     image: '/projects/colon-dreams.webp',
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.FIREBASE, TAGS.FIGMA],
