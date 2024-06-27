@@ -1,13 +1,22 @@
-import NextJS from '@/components/icons/NextJS.astro'
-import TypeScript from '@/components/icons/TypeScript.astro'
-import JavaScript from '@/components/icons/JavaScript.astro'
-import Tailwind from '@/components/icons/Tailwind.astro'
-import HTML from '@/components/icons/HTMLIcon.astro'
-import CSS from '@/components/icons/CSSIcon.astro'
-import REACT from '@/components/icons/ReactIcon.astro'
-import VITE from '@/components/icons/ViteIcon.astro'
-import Firebase from '@/components/icons/Firebase.astro'
-import Figma from '@/components/icons/Figma.astro'
+import {
+  NextJS,
+  TypeScript,
+  JavaScript,
+  Tailwind,
+  HTML,
+  CSS,
+  REACT,
+  VITE,
+  Firebase,
+  Figma,
+} from '@/components/icons'
+
+import EnanitosVerdesPreview from '@/assests/projects/enanitos-verdes.webp'
+import AdviceGeneratorPreview from '@/assests/projects/advice-generator.webp'
+import ColonDreamsPreview from '@/assests/projects/colon-dreams.webp'
+import EstudioFloresPreview from '@/assests/projects/estudio-flores.webp'
+import SwapiFrontendPreview from '@/assests/projects/swapi-frontend.webp'
+import TodoAppPreview from '@/assests/projects/todo-app.webp'
 
 export const TAGS = {
   NEXT: {
@@ -69,7 +78,7 @@ export const PROJECTS = [
       'Web de reserva y publicación de alojamientos para vacaciones o escapadas de fin de semana al departamento de Colon, Entre Ríos, Argentina.',
     link: 'https://colondreams.vercel.app//',
     // github: 'https://github.com/pheralb/svgl',
-    image: '/projects/colon-dreams.webp',
+    image: ColonDreamsPreview,
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.FIREBASE, TAGS.FIGMA],
   },
   {
@@ -78,7 +87,7 @@ export const PROJECTS = [
       'Aplicación React para creación de tareas pendientes con persistencia de datos local. Permite visualizar, crear, editar y eliminar pendientes con estado.',
     link: 'https://todo-list-arn28.vercel.app/',
     github: 'https://github.com/arn28/todo-list',
-    image: '/projects/todo-app.webp',
+    image: TodoAppPreview,
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -87,7 +96,7 @@ export const PROJECTS = [
       'Es una app glosario con información de personajes de StarWars. Implementada con React, Vite   y TypeScript. haciendo uso de la API pública SWAPI.',
     link: 'https://arn28.github.io/swapi-frontend/',
     github: 'https://github.com/arn28/swapi-frontend',
-    image: '/projects/swapi-frontend.webp',
+    image: SwapiFrontendPreview,
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -96,7 +105,7 @@ export const PROJECTS = [
       'Una aplicación generadora de consejos al hacer clic en el icono del dado. Desarrollada con TypeScript y una open API para obtener algunos consejos aleatorios y mostrárselos al usuario.',
     link: 'https://arn28.github.io/advice-generator/',
     github: 'https://github.com/arn28/advice-generator',
-    image: '/projects/advice-generator.webp',
+    image: AdviceGeneratorPreview,
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -105,7 +114,7 @@ export const PROJECTS = [
       'Landing Page responsiva e interactiva diseñada y desarrollada desde cero que muestra información y datos de contacto para un estudio jurídico.',
     link: 'https://proyecto-estudio-flores.vercel.app/',
     github: 'https://github.com/arn28/Proyecto-Estudio-Flores',
-    image: '/projects/estudio-flores.webp',
+    image: EstudioFloresPreview,
     tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.FIGMA],
   },
   {
@@ -114,7 +123,7 @@ export const PROJECTS = [
       'Web page tributo, responsiva e interactiva diseñada y desarrollada para mostrar la trayectoria, música y noticias sobre la banda argentina Los Enanitos Verdes.',
     link: 'https://proyecto-enanitos-verdes.vercel.app/',
     github: 'https://github.com/arn28/proyecto-enanitos-verdes',
-    image: '/projects/enanitos-verdes.webp',
+    image: EnanitosVerdesPreview,
     tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.FIGMA],
   },
 ]
