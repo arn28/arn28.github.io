@@ -79,7 +79,6 @@ export const PROJECTS = [
     link: 'https://colondreams.vercel.app//',
     // github: 'https://github.com/pheralb/svgl',
     image: ColonDreamsPreview,
-    // image: '/projects/colon-dreams.webp',
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT, TAGS.FIREBASE, TAGS.FIGMA],
   },
   {
@@ -89,7 +88,6 @@ export const PROJECTS = [
     link: 'https://todo-list-arn28.vercel.app/',
     github: 'https://github.com/arn28/todo-list',
     image: TodoAppPreview,
-    // image: '/projects/todo-app.webp',
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -99,7 +97,6 @@ export const PROJECTS = [
     link: 'https://arn28.github.io/swapi-frontend/',
     github: 'https://github.com/arn28/swapi-frontend',
     image: SwapiFrontendPreview,
-    // image: '/projects/swapi-frontend.webp',
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -109,7 +106,6 @@ export const PROJECTS = [
     link: 'https://arn28.github.io/advice-generator/',
     github: 'https://github.com/arn28/advice-generator',
     image: AdviceGeneratorPreview,
-    // image: '/projects/advice-generator.webp',
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.VITE],
   },
   {
@@ -118,7 +114,6 @@ export const PROJECTS = [
       'Landing Page responsiva e interactiva diseñada y desarrollada desde cero que muestra información y datos de contacto para un estudio jurídico.',
     link: 'https://proyecto-estudio-flores.vercel.app/',
     github: 'https://github.com/arn28/Proyecto-Estudio-Flores',
-    // image: '/projects/estudio-flores.webp',
     image: EstudioFloresPreview,
     tags: [TAGS.JAVASCRIPT, TAGS.CSS, TAGS.HTML, TAGS.FIGMA],
   },

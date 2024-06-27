@@ -41,11 +41,12 @@ import { CONTACT_INFO } from '@/utils/constants/contactInfo'
   </div>
 
   <img
-    width='200'
-    height='200'
-    src='/about_me.webp'
-    alt={CONTACT_INFO.FULLNAME}
     class='order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-green-500/5 ring-1 ring-black/70 dark:ring-white/20'
     style='object-position: 50% 50%'
+    src={CONTACT_INFO.ABOUT_ME_PIC.src}
+    width={CONTACT_INFO.ABOUT_ME_PIC.width}
+    height={CONTACT_INFO.ABOUT_ME_PIC.height}
+    alt={CONTACT_INFO.FULLNAME}
+    loading='lazy'
   />
 </article>

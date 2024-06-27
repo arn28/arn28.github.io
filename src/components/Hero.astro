@@ -13,8 +13,10 @@ import CopyIcon from './icons/CopyIcon.astro'
   <div class='flex gap-4 mb-4'>
     <img
       class='rounded-full shadow-lg size-16'
-      src='/profile_picture.webp'
       alt={CONTACT_INFO.FULLNAME}
+      src={CONTACT_INFO.PROFILE_PIC.src}
+      width={CONTACT_INFO.PROFILE_PIC.width}
+      height={CONTACT_INFO.PROFILE_PIC.height}
     />
     <a
       href={CONTACT_INFO.LINKEDIN}
