@@ -16,6 +16,8 @@ import LinkButton from './LinkButton.astro'
                 alt={title}
                 class='object-cover object-top transition duration-500 scale-1 md:scale-110 md:group-hover:scale-105'
                 loading='lazy'
+                width={image.width}
+                height={image.height}
                 src={image.src}
               />
             </div>
