@@ -1,27 +1,56 @@
-# 👨🏻‍💻 Porfolio para programadores y desarrolladores
+# Portafolio personal con Astro
 
-<div align="center">
-<a href="https://porfolio.dev/">
-<img src="./public/porfolio.webp">
-</a>
-<p></p>
-</div>
+Este proyecto es un portafolio personal desarrollado con Astro y Tailwind CSS para mostrar información profesional, proyectos, experiencia y enlaces de contacto.
 
-<div align="center">
+## Tecnologías
 
-![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
-![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
-![GitHub stars](https://img.shields.io/github/stars/midudev/porfolio.dev)
-![GitHub PRs](https://img.shields.io/github/issues-pr/midudev/porfolio.dev)
-![GitHub forks](https://img.shields.io/github/forks/midudev/porfolio.dev)
-![GitHub issues](https://img.shields.io/github/issues/midudev/porfolio.dev)
+- Astro
+- Tailwind CSS
+- TypeScript
+- GitHub Pages
 
-</div>
+## Requisitos
 
-## 🫂 Contribuidores
+- Node.js 18.17 o superior
+- pnpm 9 o superior
 
-<a href="https://github.com/midudev/porfolio.dev/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=midudev/porfolio.dev" />
-</a>
+## Instalación
 
-<p></p>
+```bash
+pnpm install
+```
+
+## Desarrollo
+
+```bash
+pnpm dev
+```
+
+Abre http://localhost:4321 para ver el sitio en tu navegador.
+
+## Construcción para producción
+
+```bash
+pnpm build
+```
+
+Para previsualizar el resultado generado:
+
+```bash
+pnpm preview
+```
+
+## Estructura principal
+
+- src/pages/: páginas del sitio
+- src/components/: componentes reutilizables
+- src/utils/constants/: datos de proyectos, contacto y experiencia
+- public/: archivos estáticos como imágenes y favicons
+
+## Personalización
+
+Puedes actualizar el contenido principal editando los archivos de la carpeta src/utils/constants y los componentes en src/components.
+
+## Despliegue
+
+El sitio está configurado para publicarse en GitHub Pages mediante la opción site en astro.config.mjs.
