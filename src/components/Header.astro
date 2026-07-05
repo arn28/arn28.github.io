@@ -1,44 +1,44 @@
 ---
-import ThemeToggle from './ThemeToggle.astro'
+import ThemeToggle from "./ThemeToggle.astro";
 
 const navItems = [
   {
-    title: 'Experiencia',
-    label: 'experiencia',
-    url: '/#experiencia',
+    title: "Experiencia",
+    label: "experiencia",
+    url: "/#experiencia",
   },
   {
-    title: 'Proyectos',
-    label: 'proyectos',
-    url: '/#proyectos',
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
   },
   {
-    title: 'Sobre mí',
-    label: 'sobre-mi',
-    url: '/#sobre-mi',
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
   },
   {
-    title: 'Contacto',
-    label: 'contacto',
+    title: "Contacto",
+    label: "contacto",
     // url: `mailto:${CONTACT_INFO.EMAIL}`,
     url: undefined,
   },
-]
+];
 ---
 
 <header
-  class='fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2'
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class='flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center'
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     {
       navItems.map((link) => (
         <a
-          class='cursor-pointer relative block px-2 py-2 transition hover:text-green-700 dark:hover:text-green-500 text-center'
+          class="cursor-pointer relative block px-2 py-2 transition hover:text-green-700 dark:hover:text-green-500 text-center"
           aria-label={link.label}
           href={link.url}
-          id={link.label+'-nav-item'}
+          id={link.label + "-nav-item"}
         >
           {link.title}
         </a>
@@ -49,75 +49,117 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const sections = document.querySelectorAll('section')
-    const navItems = document.querySelectorAll('header nav a')
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute('aria-label') == entry.target.id) {
-              item.classList.add('text-green-500')
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-green-500");
             } else {
-              item.classList.remove('text-green-500')
+              item.classList.remove("text-green-500");
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     // Cleanup function
     document.onvisibilitychange = () => {
-      if (document.visibilityState === 'hidden') {
-        observer.disconnect()
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
       } else {
         sections.forEach((section) => {
-          observer.observe(section)
-        })
+          observer.observe(section);
+        });
       }
-    }
-  })
+    };
+  });
 </script>
 
 <script>
-  import { copyToClipboard } from '@/utils/helpers'
-  import { CONTACT_INFO } from '@/utils/constants/contactInfo'
+  import { copyToClipboard } from "@/utils/helpers";
+  import { CONTACT_INFO } from "@/utils/constants/contactInfo";
 
-  const copyButton = document.getElementById('contacto-nav-item')
-  const alertInfo = document.getElementById('alert-info')
+  const copyButton = document.getElementById("contacto-nav-item");
+  const alertInfo = document.getElementById("alert-info");
 
   if (copyButton) {
-    copyButton.addEventListener('click', function () {
-      copyToClipboard(CONTACT_INFO.EMAIL)
-      alertInfo?.classList.add('is-open')
+    copyButton.addEventListener("click", function () {
+      copyToClipboard(CONTACT_INFO.EMAIL);
+      alertInfo?.classList.add("is-open");
       setTimeout(() => {
-        alertInfo?.classList.remove('is-open')
-      }, 3000)
-    })
+        alertInfo?.classList.remove("is-open");
+      }, 3000);
+    });
   }
 </script>
 
 <style>
+  /* 1. Estilos por defecto (Cuando la barra está arriba del todo) */
   nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    box-shadow: none;
+
+    /* Transición ultra suave para el cambio de estado */
+    transition:
+      background-color 0.3s ease,
+      backdrop-filter 0.3s ease,
+      -webkit-backdrop-filter 0.3s ease,
+      box-shadow 0.3s ease;
+
+    /* Forzar aceleración por hardware en iOS/Mac */
+    will-change: background-color, backdrop-filter;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
-  @keyframes nav-shadown {
-    to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/25 bg-white/25 ring-green-600/50;
-    }
+  /* 2. Clase activa (Se aplicará automáticamente mediante JS al bajar el scroll) */
+  nav.nav-scrolled {
+    background-color: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(12px) !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow:
+      0 0 0 1px rgba(22, 163, 74, 0.5),
+      var(--shadow-lg);
+  }
+
+  /* Modo oscuro para la clase activa */
+  /* TODO: Esta funcionalidad no esta activa para modo oscuro, revisar Tailwindv4 con astro */
+  .dark nav.nav-scrolled {
+    /* background-color: rgba(31, 41, 55, 0.25); */
+    background-color: red;
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector("nav");
+
+    if (navbar) {
+      window.addEventListener("scroll", () => {
+        // Si baja más de 20px añade la clase con el blur, si sube la quita
+        if (window.scrollY > 20) {
+          navbar.classList.add("nav-scrolled");
+        } else {
+          navbar.classList.remove("nav-scrolled");
+        }
+      });
+    }
+  });
+</script>
